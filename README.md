@@ -1,16 +1,10 @@
-# fast-deep-equal
+# fast-deep-equal-es
+
 The fastest deep equal with ES6 Map, Set and Typed arrays support.
 
 [![Build Status](https://travis-ci.org/epoberezkin/fast-deep-equal.svg?branch=master)](https://travis-ci.org/epoberezkin/fast-deep-equal)
 [![npm](https://img.shields.io/npm/v/fast-deep-equal.svg)](https://www.npmjs.com/package/fast-deep-equal)
 [![Coverage Status](https://coveralls.io/repos/github/epoberezkin/fast-deep-equal/badge.svg?branch=master)](https://coveralls.io/github/epoberezkin/fast-deep-equal?branch=master)
-
-
-## Install
-
-```bash
-npm install fast-deep-equal
-```
 
 
 ## Features
@@ -28,26 +22,20 @@ ES6 equal (`require('fast-deep-equal/es6')`) also supports:
 ## Usage
 
 ```javascript
-var equal = require('fast-deep-equal');
-console.log(equal({foo: 'bar'}, {foo: 'bar'})); // true
+import { deepEqual } from "https://js.sabae.cc/deepEqual.js";
+console.log(deepEqual({ foo: 'bar' }, { foo: 'bar' })); // true
 ```
 
 To support ES6 Maps, Sets and Typed arrays equality use:
 
 ```javascript
-var equal = require('fast-deep-equal/es6');
-console.log(equal(Int16Array([1, 2]), Int16Array([1, 2]))); // true
+import { deepEqual } from "https://js.sabae.cc/deepEqual.js";
+console.log(deepEqual(Int16Array([1, 2]), Int16Array([1, 2]))); // true
 ```
 
-To use with React (avoiding the traversal of React elements' _owner
-property that contains circular references and is not needed when
-comparing the elements - borrowed from [react-fast-compare](https://github.com/FormidableLabs/react-fast-compare)):
+## forked from fast-deep-eqaul
 
-```javascript
-var equal = require('fast-deep-equal/react');
-var equal = require('fast-deep-equal/es6/react');
-```
-
+[fast-deep-equal(https://github.com/epoberezkin/fast-deep-equal)
 
 ## Performance benchmark
 
